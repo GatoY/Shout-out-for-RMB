@@ -10,3 +10,6 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'login/register.html', context={'form': form})
+
+def index(request):
+    return render(request, 'index.html')
