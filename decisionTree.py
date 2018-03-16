@@ -1,4 +1,5 @@
 # ai...
+from sklearn.externals import joblib
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 import pandas as pd
@@ -8,7 +9,8 @@ def train():
     label = data['Decision'].values
     feature = data.ix[:,1:6]
     clf = clf.fit(feature,label)
-    return clf
+    joblib.dump(clf, 'decisionTree.pkl')
+    #when u use it, clf = joblib.load('decisionTree.pkl'), y=clf.predict(x)
 
 
 def predict(clf, data):
