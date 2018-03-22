@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegisterForm, inForm
 import predict
 from .models import LoanForm
@@ -37,7 +37,10 @@ def infoForm(request):
         form=inForm()
         return render(request, 'infoForm.html',{'infoForm': inForm})
 def result(request):
-    return null
+    user_id=request.user.id
+    loanFile=LoanForm.objects.filter(user_id=user_id)
+    context={'loanFile':loanFile}
+    return render(request, 'result.html', context)
 
 def home(request):
     return render(request, 'home.html')

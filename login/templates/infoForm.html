@@ -1,3 +1,8 @@
+{% load bootstrap %}
+
+
+
+
 <!DOCTYPE html>
 <html lang="zh-han">
     <head>
@@ -5,15 +10,52 @@
         <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
+                    </head>
     <body>
-  <form action="/infoForm" method='post' class="form-horizontal">
-      {% csrf_token %}
-      {{ infoForm }}
-              <!-- Button -->
-       <input type="submit" value="提交" />
-  </form>
-  </body>
+        <nav class="navbar navbar-inverse " role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'index'%}" style="font-size:30px; margin-left: 100px;margin-bottom: 30px;margin-top: 10px;">贷款系统</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right" style="margin-bottom: 15px;margin-top: 25px;margin-right: 30px;">
+                    <li><a href="{% url 'login:infoForm' %}"><span class="glyphicon glyphicon-th"></span> 贷款申请</a></li>
+                    <li><a href="{% url 'login:result' %}"><span class="glyphicon glyphicon-th"></span> 申请结果</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <main class="col-md-12">
+                        <form action="/infoForm" method='post' class="form-horizontal">
+                            {% csrf_token %}
+                            {{ infoForm|bootstrap_horizontal:'col-lg-2 col-sm-2' }}
+                            <!-- Button -->
+                            <p align="center"><input type="submit" value="提交" /></p>
+                        </form>
+                    </main>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        
+        
+        <footer>
+            <div class="row">
+                <div class="col-md-12">
+                    <p style="text-align: center;">Copyright &copy; 贷款系统</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+    </body>
 </html>
