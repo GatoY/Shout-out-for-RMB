@@ -19,5 +19,5 @@ class LoanForm(models.Model):
     house=models.PositiveSmallIntegerField()
     decision=models.PositiveSmallIntegerField()
     def __str__(self):
-        return null
+        return "loanform"
 # Create your models here.
