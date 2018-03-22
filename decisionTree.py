@@ -9,9 +9,10 @@ def train():
     label = data['Decision'].values
     feature = data.ix[:,1:6]
     clf = clf.fit(feature,label)
-    joblib.dump(clf, 'decisionTree.pkl')
+    #joblib.dump(clf, 'decisionTree.pkl')
     #when u use it, clf = joblib.load('decisionTree.pkl'), y=clf.predict(x)
 
 
 def predict(clf, data):
-    return clf.predict(data)
+    data=np.arrays(data)
+    return int(clf.predict(data.reshape(1,-1)))

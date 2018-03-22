@@ -10,13 +10,14 @@ class User(AbstractUser):
         pass
 
 @python_2_unicode_compatible
-class loanForm(models.Model):
-    age=models.BooleanField(default=False)
+class LoanForm(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    age=models.PositiveSmallIntegerField()
     credit=models.PositiveSmallIntegerField()
-    vouch=models.BooleanField(default=False)
+    vouch=models.PositiveSmallIntegerField()
     income=models.PositiveSmallIntegerField()
-    house=models.BooleanField(default=False)
-    decision=models.BooleanField(default=False)
+    house=models.PositiveSmallIntegerField()
+    decision=models.PositiveSmallIntegerField()
     def __str__(self):
         return null
 # Create your models here.

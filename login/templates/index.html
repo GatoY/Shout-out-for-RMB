@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
@@ -7,14 +7,16 @@
     <title>首页</title>
     <link rel="stylesheet" href="https://unpkg.com/mobi.css/dist/mobi.min.css">
 </head>
-<body>
+
 <div class="flex-center">
     <div class="container">
         <div>
-            <h1 class="logo"><a href="{% url 'index' %}">贷款系统</a></h1>
+            
             {% if user.is_authenticated %}
+                 <h1 class="logo"><a href="{% url 'home' %}">贷款系统</a></h1>
                 <p>你已登录，欢迎你：<a href="#">{{ user.username }}</a></p>
             {% else %}
+            <h1 class="logo"><a href="{% url 'index' %}">贷款系统</a></h1>
                 <p>你还没有登录，请
                     <button class="btn btn-default"><a href="{% url 'login' %}">登录</a></button>
                     或者
@@ -24,5 +26,4 @@
         </div>
     </div>
 </div>
-</body>
 </html>

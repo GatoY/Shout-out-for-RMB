@@ -6,5 +6,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/',include('login.urls',namespace='login')),
     url(r'^login/',include('django.contrib.auth.urls')),
-    url(r'^$',views.index,name='index')
+    url(r'^$',views.index,name='index'),
+    url(r'^accounts/profile/$',views.home, name = 'home'),
+    url(r'^infoForm',views.infoForm, name = 'info'),
 ]
