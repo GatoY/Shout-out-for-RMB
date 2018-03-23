@@ -32,10 +32,11 @@ def infoForm(request):
             loanFile.save()
             print loanFile.decision
             print 'save successfully'
-            return render(request, 'result.html')
+            return redirect('result.html')
+
     else:
         form=inForm()
-        return render(request, 'infoForm.html',{'infoForm': inForm})
+    return render(request, 'infoForm.html',{'infoForm': inForm})
 def result(request):
     user_id=request.user.id
     loanFile=LoanForm.objects.filter(user_id=user_id)

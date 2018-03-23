@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^accounts/profile/$',views.home, name = 'home'),
     url(r'^infoForm',views.infoForm, name = 'info'),
+    url(r'^result',views.result, name='result'),
 ]
