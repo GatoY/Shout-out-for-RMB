@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'loansystem',
         'USER': 'root',
-        'PASSWORD': 'Msqlmima',
+        'PASSWORD': '****',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
